@@ -6,7 +6,8 @@ footer {
   padding: 2%;
   padding-left: 5%;
   background-color: black;
-  justify-content:space-around
+  justify-content:space-around;
+    align-content:flex-start;
 }
 nav {margin-bottom: 0.5%}
 a {
