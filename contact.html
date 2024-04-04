@@ -16,7 +16,7 @@
     <title>Jarditou</title>
   </head>
   <body>
-    <div class="container">
+    <div class="assets/js/validation.js/js/validation.js">
       <header class="d-flex justify-content-between">
         <img class="img-fluid col-5 col-lg-3" src=assets/img/jarditou_logo.jpg
         alt=logo_jarditou title=logo_jarditou id="logo">
@@ -79,8 +79,9 @@
               placeholder="Veuillez saisir votre nom"
               type="text"
               name="nom"
-              id="nom"
+              id="req_nom"
             />
+            <small></small>
             <p>
               <label for="prenom">Votre prénom*:</label
               ><input
@@ -88,34 +89,34 @@
                 placeholder="Veuillez saisir votre prénom"
                 type="text"
                 name="prenom"
-                id="prenom"
+                id="req_prenom"
                 required
               />
             </p>
             <p>
-              <label for="sexe">Sexe*:</label>
+              <label for="sexe" id="sexe">Sexe*:</label>
               <input 
               type="radio" 
               name="sexe" 
-              id="sexe" 
+              id="sexeF" 
               value="Feminin" 
               required
               />Feminin
               <input
                 type="radio"
                 name="sexe"
-                id="sexe"
+                id="sexeM"
                 value="Masculin"
                 required
               />Masculin
             </p>
             <p>
               <label for="ddn">Date de naissance*:</label
-              ><input class="form-control" type="date" name="ddn" id="ddn" />
+              ><input class="form-control" type="date" name="ddn" id="req_ddn" />
             </p>
             <p>
               <label for="CP">Code postal*:</label
-              ><input class="form-control" type="text" name="CP" id="CP" />
+              ><input class="form-control" type="text" name="CP" id="req_CP" />
             </p>
             <p>
               <label for="adresse">Adresse:</label
@@ -141,7 +142,7 @@
                 class="form-control"
                 type="text"
                 name="email"
-                id="email"
+                id="req_email"
                 placeholder="dave.loper@afpa.fr"
                 required
               />
@@ -165,7 +166,7 @@
               ><textarea
                 class="form-control"
                 name="question"
-                id="question"
+                id="req_question"
               ></textarea>
             </p>
           </fieldset>

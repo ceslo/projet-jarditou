@@ -1,60 +1,37 @@
 $(document).ready(function () {
   function verif() {
-   
     var envoi = true;
+    var x = $("[id^=req_");  
 
-    if ($("#prenom").val()=="") {
-        envoi= false;
-      $("#prenom").addClass("alert alert-danger");
-    }
-
-
-    if ($("#nom").val()=="") {
-        envoi= false;
-      $("#nom").addClass("alert alert-danger");
-    }
-  
-    if ($("#ddn").val()=="") {
-        envoi= false;
-      $("#ddn").addClass("alert alert-danger");
-    }
-  
-    if ($("#CP").val()=="") {
-        envoi= false;
-      $("#CP").addClass("alert alert-danger");
-    }
-
-    if ($("#email").val()=="") {
-        envoi= false;
-      $("#email").addClass("alert alert-danger");
-    }
-    if ($("#question").val()=="") {
-        envoi= false;
-      $("#question").addClass("alert alert-danger");
-    }
-
-    if ($("#sujet option[1]").is()) {
-        envoi= false;
-      $("#sujet").addClass("alert alert-danger");
-    }
-    if ($("#traitement_info").is(":not(:checked)")){
-        envoi= false;
-      $("#label_info").addClass("text-danger");
-    }
-
-
-
-if(envoi==true)
-{
-    $("#contact").submit();
+if (x.val() == "") {
+  envoi = false;
+  $(x).addClass("alert alert-danger");
+  $(x+small).html("Ce champ est obligatoire.");
 }
-};
 
+if ($("#traitement_info").is(":not(:checked)")) {
+  envoi = false;
+  $("#label_info").addClass("text-danger");
+}
+if( $("#sexeM").is(":not(:checked)") && $("#sexeF").is(":not(:checked)")) {
+envoi=false
+$(x).addClass("alert alert-danger")
+$("#sexe").addClass("text-danger")
+}
 
-  $("#envoyer").click(function(e) {
+   if($("#req_nom").val().match(":not([A-Za-z]+)"))
+   {
+    envoi=false;
+    $("#req_nom").addClass("alert alert-danger")
+    
+   }
+    if (envoi == true) {
+      $("#contact").submit();
+    }
+  }
+
+  $("#envoyer").click(function (e) {
     e.preventDefault();
     verif();
-  })
-
-
+  });
 });
